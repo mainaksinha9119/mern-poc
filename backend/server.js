@@ -9,8 +9,12 @@ import courseRouter from './route/courseRoute.js'
 import userRouter from './route/userRoute.js';
 dotnet.config()
 configDb()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express()
+app.use(express.static(path.join(__dirname, './dist'))); 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './dist', 'index.html'));
+});
 // const server = createServer((request,response) => {
 //     if(request.url == '/') {
 //         response.writeHead(200,{
