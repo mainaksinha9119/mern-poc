@@ -7,7 +7,7 @@ import configDb from "./config/db.js"
 import authRouter from './route/authRoute.js'
 import courseRouter from './route/courseRoute.js'
 import userRouter from './route/userRoute.js';
-const path = require('path');
+import path from "path"
 dotnet.config()
 configDb()
 const port = process.env.PORT || 8080;
